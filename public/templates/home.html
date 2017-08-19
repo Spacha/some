@@ -1,0 +1,28 @@
+<!-- HELLO!
+
+<input type="text" ng-model="teksti" ng-change="updateTulos()"/>
+
+<p>{{ tulos | uppercase }}</p> -->
+
+<div class="row">
+	<div class="col-sm-6 form-group">
+		<h3>Send a new message</h3>
+		<form>
+			<div class="form-group">
+				<textarea class="form-control" placeholder="Message" aria-label="Message" ng-model="msg.message"></textarea>
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Nickname" aria-label="Nickname" ng-model="msg.nickname">
+			</div>
+			<button class="btn btn-primary" type="button" ng-click="sendMessage()">Send</button>
+		</form>
+	</div>
+</div>
+
+<div ng-class="{loading : loading}">
+
+	<ul class="messages-list">
+		<li ng-repeat="message in messages">{{ message.content }} | {{ message.sender }} | <a href="#" ng-click="deleteMessage(message.id)">X</a></li>
+	</ul>
+</div>
