@@ -23,6 +23,13 @@
 <div ng-class="{loading : loading}">
 
 	<ul class="messages-list">
-		<li ng-repeat="message in messages">{{ message.content }} | {{ message.sender }} | <a href="#" ng-click="deleteMessage(message.id)">X</a></li>
+		<li ng-repeat="message in messages" class="clearfix">
+		<div class="pull-left">
+			{{ message.content }}
+			<span style="display: block; font-style: italic;">{{ message.sender }}</span>
+		</div>
+		<div class="pull-right"><button type="button" class="btn btn-danger" ng-click="deleteMessage(message.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+</button></div>
+		</li>
 	</ul>
 </div>
