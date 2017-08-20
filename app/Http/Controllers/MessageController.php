@@ -23,7 +23,7 @@ class MessageController extends Controller
 	}
 
     public function fetchMessages() {
-    	$messages = Message::all();
+    	$messages = Message::orderBy('created_at', 'DESC')->get();
 
     	return $messages;
     }
