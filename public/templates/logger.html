@@ -1,0 +1,52 @@
+<div class="row">
+	<div class="add-box">
+		<h3>Add a new work</h3>
+
+		<form class="form-inline">
+		  <label class="sr-only" for="workNameInput">Work name</label>
+		  <input type="text" ng-model="work.name" class="form-control mb-2 mr-sm-2 mb-sm-0" id="workNameInput" placeholder="Work name">
+
+		  <label class="sr-only" for="hoursInput">Hours</label>
+		  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+		    <div class="input-group-addon">H</div>
+		    <input type="number" step="0.01" ng-model="work.hours" class="form-control" id="hoursInput" placeholder="Hours">
+		  </div>
+
+		  <button type="submit" ng-click="addWork()" class="btn btn-primary">Add</button>
+		</form>
+	</div>
+</div>
+
+<div ng-class="{loading : loading}">
+
+	<!-- <ul class="works-list">
+		<li ng-repeat="work in works" class="clearfix">
+		<div class="pull-left">
+			{{ work.name }}
+			<span style="display: block; font-style: italic;">{{ work.hours }}</span>
+		</div>
+		<div class="pull-right">
+			
+		</div>
+		</li>
+	</ul> -->
+
+	<table class="table table-bordered works-table">
+	  <thead>
+	    <tr>
+	      <th>Added</th>
+	      <th>Work name</th>
+	      <th>Hours</th>
+	      <th>Project</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="work in works">
+	      <th scope="row">{{ work.created_at }}</th>
+	      <td>{{ work.name }}</td>
+	      <td>{{ work.hours }}</td>
+	      <td>-</td>
+	     </tr>
+	  </tbody>
+	</table>
+</div>

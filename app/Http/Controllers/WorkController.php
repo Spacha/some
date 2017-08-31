@@ -9,7 +9,7 @@ use App\Work;
 class WorkController extends Controller
 {
     public function fetchWorks() {
-    	$works = Work::orderBy('created_at', 'ASC')->get();
+    	$works = Work::orderBy('created_at', 'DESC')->get();
 
     	return $works;
     }
@@ -17,10 +17,12 @@ class WorkController extends Controller
     public function addWork(Request $request) {
     	$name = $request->input('name');
     	$hours = $request->input('hours');
+        $project_id = $request->input('projectId');
 
     	$work = new Work();
     	$work->name = $name;
     	$work->hours = $hours;
+        $work->project_id = $project_id;
 
     	$work->save();
 

@@ -33,7 +33,7 @@ angular.module('some').controller('MainCtrl', function($scope, $http) {
 
 	$scope.fetchMessages = function() {
 		$scope.loading = true;
-		return $http.get('/messages/get')
+		return $http.get('/api/messages/get')
 			.then(function(response){
 				$scope.messages = response.data;
 				$scope.loading = false;

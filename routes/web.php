@@ -18,10 +18,10 @@ Route::get('/', function () {
 Route::group(['prefix' => 'api'], function() {
 
 	Route::get('/messages/get', 'MessageController@fetchMessages');
-	Route::post('/api/messages/send', 'MessageController@sendMessage');
-	Route::post('/api/messages/delete', 'MessageController@deleteMessage');
+	Route::post('/messages/send', 'MessageController@sendMessage');
+	Route::post('/messages/delete', 'MessageController@deleteMessage');
 
 	Route::get('/works/get', 'WorkController@fetchWorks');
-	Route::post('/api/works/add', 'WorkController@addWork');
+	Route::post('/works/add', 'WorkController@addWork');
 
 });

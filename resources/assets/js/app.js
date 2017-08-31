@@ -8,6 +8,10 @@ some.config(function($routeProvider, $locationProvider) {
 			templateUrl: 'templates/home.html',
 			controller: 'MainCtrl'
 		})
+		.when('/logger', {
+			templateUrl: 'templates/logger.html',
+			controller: 'LoggerCtrl'
+		})
 		.when('/login', {
 			templateUrl: 'templates/login.html',
 			controller: 'LoginCtrl'
