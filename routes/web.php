@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('master');
 });
 
-Route::get('/messages/get', 'MessageController@fetchMessages');
-Route::post('/api/messages/send', 'MessageController@sendMessage');
-Route::post('/api/messages/delete', 'MessageController@deleteMessage');
+Route::group(['prefix' => 'api'], function() {
+
+	Route::get('/messages/get', 'MessageController@fetchMessages');
+	Route::post('/api/messages/send', 'MessageController@sendMessage');
+	Route::post('/api/messages/delete', 'MessageController@deleteMessage');
+
+	Route::get('/works/get', 'WorkController@fetchWorks');
+	Route::post('/api/works/add', 'WorkController@addWork');
+
+});
