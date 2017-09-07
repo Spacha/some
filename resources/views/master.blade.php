@@ -23,6 +23,10 @@
     </head>
     <body ng-app="some">
 
+        <ng-include
+            src="'templates/header.html'">
+        </ng-include>
+        
         <div class="container-narrow">
             <ng-view></ng-view>
         </div>

@@ -2,9 +2,7 @@ angular.module('some').controller('MainCtrl', function($scope, $http) {
 	$scope.tulos = "";
 	$scope.messages = {};
 
-	$scope.updateTulos = function() {
-		$scope.tulos = $scope.teksti;
-	};
+	$scope.header = 'templates/header.html';
 
 	$scope.sendMessage = function() {
 		$http.post('/api/messages/send', {
