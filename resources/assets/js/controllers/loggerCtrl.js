@@ -2,6 +2,16 @@ angular.module('some').controller('LoggerCtrl', function($scope, $http) {
 	$scope.tulos = "";
 	$scope.works = {};
 
+	$scope.getTotalHours = function() {
+		var totalHours = 0;
+
+		for(work in this.works) {
+			totalHours += this.works[work].hours;
+		}
+
+		return totalHours;
+	}
+
 	$scope.addWork = function() {
 		$http.post('/api/works/add', {
 			name: $scope.work.name,
