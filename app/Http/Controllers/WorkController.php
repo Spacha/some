@@ -28,4 +28,18 @@ class WorkController extends Controller
 
     	return ok("Work added!");
     }
+
+    public function viewPrintable() {
+        $works = Work::orderBy('created_at', 'DESC')->get();
+
+        $totalHours = 0;
+        foreach ($works as $work) {
+            $totalHours += $work->hours;
+        }
+        
+        return view('printable', [
+            'works' => $works,
+            'totalHours' => $totalHours
+        ]);
+    }
 }

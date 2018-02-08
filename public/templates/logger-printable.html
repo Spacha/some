@@ -1,0 +1,19 @@
+<div ng-class="{loading : loading}">
+
+    <table class="table table-bordered works-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Work name</th>
+          <th>Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="work in works">
+          <th scope="row">{{ work.created_at }}</th>
+          <td>{{ work.name }}</td>
+          <td>{{ work.hours }}</td>
+         </tr>
+      </tbody>
+    </table>
+</div>

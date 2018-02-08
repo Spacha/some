@@ -12,6 +12,10 @@ some.config(function($routeProvider, $locationProvider) {
 			templateUrl: 'templates/logger.html',
 			controller: 'LoggerCtrl'
 		})
+		.when('/logger/printable', {
+			templateUrl: 'templates/logger-printable.html',
+			controller: 'LoggerCtrl'
+		})
 		.when('/login', {
 			templateUrl: 'templates/login.html',
 			controller: 'LoginCtrl'

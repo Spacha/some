@@ -25,3 +25,5 @@ Route::group(['prefix' => 'api'], function() {
 	Route::post('/works/add', 'WorkController@addWork');
 
 });
+
+Route::get('/logger/printable', 'WorkController@viewPrintable');
